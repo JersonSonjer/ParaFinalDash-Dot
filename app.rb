@@ -6,6 +6,8 @@ get '/' do
 end
 
 post '/inicio' do
-    @posicion=params[:comandos_auto]
+    @posicionInicial=params[:comandos_auto]
+    @comandos=params[:comandos_auto]
+    @posicionFinal=params[:comandos_auto]
     erb :inicio
 end

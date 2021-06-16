@@ -6,4 +6,6 @@ Scenario:
     Given visito la pagina de comandos
     When ingreso la posicion inicial del auto "2,2"
     And presiono el boton "ejecutar"
-    Then deberia mostrar la posicion inicial del auto "Posicion Inicial 2,2"
+    Then deberia mostrar la posicion inicial del auto "Posicion Inicial: 2,2"
+    And deberia mostrar los comandos ingresados "Comandos: 2,2"
+    And deberia mostrar la posicion final del auto "Posicion Final: 2,2"
