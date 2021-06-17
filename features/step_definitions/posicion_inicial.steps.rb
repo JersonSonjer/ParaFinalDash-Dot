@@ -3,8 +3,8 @@ Given('visito la pagina de comandos') do
     click_button('iniciar')
 end
   
-When('ingreso la posicion inicial del auto {string}') do |posInicial|
-  fill_in('comandos_auto', :with => posInicial)
+When('ingreso los datos {string}') do |posInicial|
+  fill_in('datos_ingresados', :with => posInicial)
 end
   
 When('presiono el boton {string}') do |ejecutar|

@@ -4,8 +4,8 @@ Feature:
     Para poder validar que termino en la posicion correcta
 Scenario:
     Given visito la pagina de comandos
-    When ingreso la posicion inicial del auto "2,2"
+    When ingreso los datos "5,5-2,2,N-IAIAIADA"
     And presiono el boton "ejecutar"
-    Then deberia mostrar la posicion inicial del auto "Posicion Inicial: 2,2"
-    And deberia mostrar los comandos ingresados "Comandos: 2,2"
-    And deberia mostrar la posicion final del auto "Posicion Final: 2,2"
+    Then deberia mostrar la posicion inicial del auto "Posicion Inicial: 5,5-2,2,N-IAIAIADA"
+    And deberia mostrar los comandos ingresados "Comandos: 5,5-2,2,N-IAIAIADA"
+    And deberia mostrar la posicion final del auto "Posicion Final: 5,5-2,2,N-IAIAIADA"
