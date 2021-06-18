@@ -1,6 +1,7 @@
 require './lib/Dash&DotMain.rb'
 require './lib/Direccion.rb'
 require './lib/Mover.rb'
+require './lib/ConvertString.rb'
 RSpec.describe "juego de Dash & Dot"do
 #direccion
     it "Deberia devolver la direccion E para la dir S y comando I" do
@@ -24,9 +25,17 @@ RSpec.describe "juego de Dash & Dot"do
         expect(avanzar_oeste_este(2, "E")).to eq(3)
     end
     it "Deberia devolver su cordenada x resultante 1" do
-        expect(avansar_norte_sur(2, "N")).to eq(1)
+        expect(avanzar_norte_sur(2, "N")).to eq(1)
     end
     it "Deberia devolver su cordenada x resultante 3" do
-        expect(avansar_norte_sur(2, "S")).to eq(3)
+        expect(avanzar_norte_sur(2, "S")).to eq(3)
+    end
+#dividir el string de entrada en tamanio, posicion Inicial y Comandos
+    it "Deberia devolver un string separado en 3 segmentos" do
+    expect(dividir_cadena2("5,5\n2,2 N\nIAIAIADA")).to eq(["5,5","2,2 N","IAIAIADA"])
+    end
+#Convierte coordenada de string a int
+    it "Deberia devolver cordenadas de string a int" do
+        expect(ubicacion2("2,2 N")).to eq([2,2,"N"])
     end
 end    
