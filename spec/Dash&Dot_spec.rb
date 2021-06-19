@@ -38,4 +38,10 @@ RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver cordenadas de string a int" do
         expect(ubicacion2("2,2 N")).to eq([2,2,"N"])
     end
+    it "Deberia devolver cordenadas de string a int" do
+        expect(ubicacion2("2,2,N")).to eq([2,2,"N"])
+    end
+    it "Deberia devolver tamano de string a int" do
+        expect(tamano("5,5")).to eq([5,5])
+    end
 end    
