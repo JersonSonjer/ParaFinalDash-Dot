@@ -91,4 +91,11 @@ obstaculos=[]
     it "Deberia devolver ubicacion final sin salir de los limites inferior" do
         expect(mover_auto2([5,5],[4,4,"N"],"AAA",obstaculos)).to eq([1,4,"N"])
     end
+    #obstaculos
+    it "Deberia retroceder un espacio el auto" do
+        expect(retroceder([2,2,"N"])).to eq([3,2,"N"])
+    end
+    it "Deberia retroceder un espacio el auto" do
+        expect(retroceder([2,2,"E"])).to eq([2,1,"E"])
+    end
 end    
