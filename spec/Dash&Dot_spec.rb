@@ -3,7 +3,10 @@ require './lib/Direccion.rb'
 require './lib/Mover.rb'
 require './lib/ConvertString.rb'
 require './lib/Limites.rb'
+require './lib/Mover_Auto.rb'
 RSpec.describe "juego de Dash & Dot"do
+
+obstaculos=[]
 #direccion
     it "Deberia devolver la direccion E para la dir S y comando I" do
     expect(direccion("S", "I")).to eq("E")
@@ -74,5 +77,18 @@ RSpec.describe "juego de Dash & Dot"do
     end
     it "Deberia devolver false ya que sobresale de los limites" do
         expect(verificarLimites([6,2], [5,5])).to eq(false)
+    end
+#MoverAuto verificando limites sin enviar obstaculos
+    it "Deberia devolver ubicacion final sin salir de los limites" do
+        expect(mover_auto2([5,5],[2,2,"N"],"IAAA",obstaculos)).to eq([2,0,"O"])
+    end
+    it "Deberia devolver ubicacion final sin salir de los limites" do
+        expect(mover_auto2([5,5],[0,0,"E"],"AAA",obstaculos)).to eq([0,3,"E"])
+    end
+    it "Deberia devolver ubicacion final sin salir de los limites inferior" do
+        expect(mover_auto2([5,5],[2,2,"N"],"IAIAAA",obstaculos)).to eq([4,1,"S"])
+    end
+    it "Deberia devolver ubicacion final sin salir de los limites inferior" do
+        expect(mover_auto2([5,5],[4,4,"N"],"AAA",obstaculos)).to eq([1,4,"N"])
     end
 end    
