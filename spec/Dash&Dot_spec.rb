@@ -2,6 +2,7 @@ require './lib/Dash&DotMain.rb'
 require './lib/Direccion.rb'
 require './lib/Mover.rb'
 require './lib/ConvertString.rb'
+require './lib/Limites.rb'
 RSpec.describe "juego de Dash & Dot"do
 #direccion
     it "Deberia devolver la direccion E para la dir S y comando I" do
@@ -43,5 +44,28 @@ RSpec.describe "juego de Dash & Dot"do
     end
     it "Deberia devolver tamano de string a int" do
         expect(tamano("5,5")).to eq([5,5])
+    end
+    #limites
+    it "Deberia devolver true si esta dentro de los limites" do
+        expect(verificarCoordenada(2,5)).to eq(true)
+    end
+    it "Deberia devolver false ya que NO esta dentro de los limites" do
+        expect(verificarCoordenada(-1,5)).to eq(false)
+    end
+    it "Deberia devolver false ya que NO esta dentro de los limites" do
+        expect(verificarCoordenada(6,5)).to eq(false)
+    end
+    it "Deberia devolver true si esta dentro de los limites" do
+        expect(verificarCoordenada(0,5)).to eq(true)
+    end
+    it "Deberia devolver true si esta dentro de los limites" do
+        expect(verificarCoordenada(4,5)).to eq(true)
+    end
+    
+    it "Deberia devolver la coordenada si esta dentro de los limites" do
+        expect(verificarCoordenada2(0,5)).to eq(0)
+    end
+    it "Deberia devolver la coordenada si esta dentro de los limites" do
+        expect(verificarCoordenada2(4,5)).to eq(4)
     end
 end    
