@@ -98,4 +98,11 @@ obstaculos=[]
     it "Deberia retroceder un espacio el auto" do
         expect(retroceder([2,2,"E"])).to eq([2,1,"E"])
     end
+    #comparar ubicacion
+    it "Deberia devolver true si estan en la misma ubicacion" do
+        expect(comparar([2,2,"E"],["O",2,2])).to eq(true)
+    end
+    it "Deberia devolver false si no estan en la misma ubicacion" do
+        expect(comparar([4,3,"S"],["O",2,2])).to eq(false)
+    end
 end    

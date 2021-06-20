@@ -36,3 +36,10 @@ def retro_norte_sur(y, direccion)#=>2,N
          return x #=>1
      end
   end
+
+  def comparar(ubicacion,obstaculo)#[2,2,"E"],["O",2,2]
+    if (obstaculo[1]==ubicacion[0] && obstaculo[2]==ubicacion[1])
+        return true
+    end
+    return false
+  end
