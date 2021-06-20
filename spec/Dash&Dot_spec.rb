@@ -68,4 +68,11 @@ RSpec.describe "juego de Dash & Dot"do
     it "Deberia devolver la coordenada si esta dentro de los limites" do
         expect(verificarCoordenada2(4,5)).to eq(4)
     end
+
+    it "Deberia devolver false ya que NO esta dentro de los limites" do
+        expect(verificarLimites([2,-1], [5,5])).to eq(false)
+    end
+    it "Deberia devolver false ya que sobresale de los limites" do
+        expect(verificarLimites([6,2], [5,5])).to eq(false)
+    end
 end    

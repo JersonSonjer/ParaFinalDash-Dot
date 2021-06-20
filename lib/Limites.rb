@@ -20,3 +20,12 @@ def verificarCoordenada2(coord, limite)
     end
     return coord
 end
+
+def verificarLimites(ubicacion, tamano)
+    if (verificarCoordenada(ubicacion[0], tamano[0]))
+        if (verificarCoordenada(ubicacion[1], tamano[1]))
+            return true
+        end
+    end
+    return false
+end
