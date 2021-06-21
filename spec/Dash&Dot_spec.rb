@@ -80,7 +80,7 @@ obstaculos=[]
     end
 #MoverAuto verificando limites sin enviar obstaculos
     it "Deberia devolver ubicacion final sin salir de los limites" do
-        expect(mover_auto2([5,5],[2,2,"N"],"IAAA",obstaculos)).to eq([2,0,"O"])
+        expect(mover_auto2([5,5],[2,2,"N"],"IAAA",[])).to eq([2,0,"O"])
     end
     it "Deberia devolver ubicacion final sin salir de los limites" do
         expect(mover_auto2([5,5],[0,0,"E"],"AAA",obstaculos)).to eq([0,3,"E"])
@@ -91,6 +91,7 @@ obstaculos=[]
     it "Deberia devolver ubicacion final sin salir de los limites inferior" do
         expect(mover_auto2([5,5],[4,4,"N"],"AAA",obstaculos)).to eq([1,4,"N"])
     end
+    
     #obstaculos
     it "Deberia retroceder un espacio el auto" do
         expect(retroceder([2,2,"N"])).to eq([3,2,"N"])
@@ -104,5 +105,16 @@ obstaculos=[]
     end
     it "Deberia devolver false si no estan en la misma ubicacion" do
         expect(comparar([4,3,"S"],["O",2,2])).to eq(false)
+    end
+    #verificar obstaculos
+    it "Deberia devolver la ubicacion si no se encuentra con un obstaculo" do
+        expect(sobreObstaculos([4,3,"S"],[["O",2,2],["O",1,2],["O",3,3]])).to eq([4,3,"S"])
+    end
+    it "Deberia devolver la ubicacion nueva si se encuentra con un obstaculo" do
+        expect(sobreObstaculos([3,3,"S"],[["O",2,2],["O",1,2],["O",3,3]])).to eq([2,3,"S"])
+    end 
+    #MoverAuto verificando limites enviando obstaculos
+    it "Deberia devolver ubicacion final sin salir de los limites" do
+        expect(mover_auto2([5,5],[2,2,"N"],"IAAA",[["O",3,2],["O",1,2],["O",2,0]])).to eq([2,1,"O"])
     end
 end    

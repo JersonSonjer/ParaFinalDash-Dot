@@ -30,8 +30,8 @@ def verificarLimites(ubicacion, tamano)
     return false
 end
 
-def verificarLimites2(ubicacion,tamano)#=>[0,3 "E"][5,5]
-    ubicacion[0]=verificarCoordenada2(ubicacion[0], tamano[0])#=>0
-    ubicacion[1]=verificarCoordenada2(ubicacion[1], tamano[1])#=>3
-    return ubicacion#=>[0,3 "E"]
+def verificarLimites2(ubicacion,tamano)#=> [2,1 "O"], [5,5]
+    ubicacion[0]=verificarCoordenada2(ubicacion[0], tamano[0])#=>2
+    ubicacion[1]=verificarCoordenada2(ubicacion[1], tamano[1])#=>1
+    return ubicacion#=>[2,1 "O"]
 end

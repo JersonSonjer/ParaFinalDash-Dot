@@ -1,16 +1,16 @@
 
-def avanzar(ubicacion, tamano)#=>[0,2,"E"],[5,5]
+def avanzar(ubicacion, tamano)#=>[2,1,"O"],[5,5]
     
     if (ubicacion[2] == 'N' || ubicacion[2] == 'S')
-        ubicacion[0]=avanzar_norte_sur(ubicacion[0], ubicacion[2])
+        ubicacion[0]=avanzar_norte_sur(ubicacion[0], ubicacion[2])#=>
     end
     if (ubicacion[2] == 'O' || ubicacion[2] == 'E')
-        ubicacion[1]=avanzar_oeste_este(ubicacion[1], ubicacion[2])#=>3
+        ubicacion[1]=avanzar_oeste_este(ubicacion[1], ubicacion[2])#=>1
     end
-    return ubicacion#=>[0,3 "E"]
+    return ubicacion#=>[2,0 "O"]
 end
 
-def avanzar_oeste_este(x, di)#[y =>2, x =>2, O] 
+def avanzar_oeste_este(x, di)#[y =>2, x =>2, O] =>2,O
     if (di == 'O')
         x = x - 1#=>2-1
         return x #=>1
