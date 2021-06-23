@@ -33,3 +33,36 @@ def convertObstaculos(obstaculos) # ["O 3,2", ....]
     end
     return aux #[["O",3,2],......]
 end
+
+def filtrarObstaculos(cad)
+    aux=[]
+    cad.each do |elemento|
+        if (elemento[0] == "O")
+            aux.push(stringObstaculos(elemento))#push aniade un elemento al arreglo
+        end
+    end
+    return aux #[["O",3,2],......]
+end
+
+
+# ubicacion a string
+
+def ubicString(ubicFinal)
+    ubicFinal[0]=ubicFinal[0].to_s
+    ubicFinal[1]=ubicFinal[1].to_s
+    resp=ubicFinal[0]+','+ubicFinal[1]+' '+ubicFinal[2]
+    return resp
+end
+
+#respuesta en string
+def unirString(cad, auto1, auto2)
+    resp=[]
+    resp.push(cad[0])
+    resp.push(cad[1])
+    resp.push(cad[2])
+    resp.push(auto1)
+    resp.push(cad[3])
+    resp.push(cad[4])
+    resp.push(auto2)
+    return resp
+end

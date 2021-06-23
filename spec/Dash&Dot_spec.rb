@@ -130,4 +130,21 @@ obstaculos=[]
     it "Deberia devolver los obstaculos como arreglo" do
         expect(convertObstaculos(["O 3,2","O 1,2","O 3,3"])).to eq([["O",3,2],["O",1,2],["O",3,3]])
     end
+    # principal
+    
+    it "Deberia devolver ubicacion final con 2 autos" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAA\nO 3,2\nO 1,2\nO 3,3")).to eq(["5,5","2,2 N","IAIAIADA","4,1 S","2,3 N","IAA","2,1 O"])
+    end
+    it "Deberia devolver ubicacion final con 2 autos" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nAAI\nO 3,2\nO 1,2\nO 3,3")).to eq(["5,5","2,2 N","IAIAIADA","4,1 S","2,3 N","AAI","0,3 O"])
+    end
+    it "Deberia devolver ubicacion final chocando autos" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAA\nO 3,2\nO 1,2\nO 3,3")).to eq(["5,5","2,2 N","IAIAIADA","4,1 S","2,3 N","IAAIAA","3,1 S"])
+    end
+    it "Deberia devolver ubicacion final chocando autos" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAA")).to eq(["5,5","2,2 N","IAIAIADA","4,2 S","2,3 N","IAAIAA","4,1 S"])
+    end
+    it "Deberia devolver ubicacion final sin ingresar obstaculos" do
+        expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAAIA")).to eq(["5,5","2,2 N","IAIAIADA","4,2 S","2,3 N","IAAIAAIA","4,1 E"])
+    end
 end    
