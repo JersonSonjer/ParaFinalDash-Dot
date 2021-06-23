@@ -17,3 +17,19 @@ def tamano(cadena)
     cad[1]=cad[1].to_i
     return cad
 end
+
+#OBSTACULOS 
+def stringObstaculos(obstaculo)# "O 3,2"
+    aux=obstaculo.split(/\s|,/)
+    aux[1]=aux[1].to_i
+    aux[2]=aux[2].to_i
+    return aux # ["O",3,2]
+end
+
+def convertObstaculos(obstaculos) # ["O 3,2", ....]
+    aux=[]
+    obstaculos.each do |elemento|
+        aux.push(stringObstaculos(elemento))
+    end
+    return aux #[["O",3,2],......]
+end

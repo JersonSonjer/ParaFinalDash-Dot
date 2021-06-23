@@ -117,4 +117,17 @@ obstaculos=[]
     it "Deberia devolver ubicacion final sin salir de los limites" do
         expect(mover_auto2([5,5],[2,2,"N"],"IAAA",[["O",3,2],["O",1,2],["O",2,0]])).to eq([2,1,"O"])
     end
+    it "Deberia devolver ubicacion final" do
+        expect(mover_auto2([5,5],[2,2,"N"],"IAIAIADA",[["O",3,2],["O",1,2],["O",3,3]])).to eq([4,1,"S"])
+    end
+    it "Deberia devolver ubicacion final" do
+        expect(mover_auto2([5,5],[2,3,"N"],"IAAIAA",[["O",3,2],["O",1,2],["O",3,3]])).to eq([4,1,"S"])
+    end
+    #stringObstaculos
+    it "Deberia devolver el obstaculo como arreglo" do
+        expect(stringObstaculos("O 3,3")).to eq(["O",3,3])
+    end
+    it "Deberia devolver los obstaculos como arreglo" do
+        expect(convertObstaculos(["O 3,2","O 1,2","O 3,3"])).to eq([["O",3,2],["O",1,2],["O",3,3]])
+    end
 end    
