@@ -66,3 +66,17 @@ def unirString(cad, auto1, auto2)
     resp.push(auto2)
     return resp
 end
+
+def stringPuente(puente)# 3,1
+    aux=puente.split(/,/) #["3","1"]
+    aux[0]=aux[0].to_i
+    aux[1]=aux[1].to_i
+    return aux # [3,1]
+end
+
+def convertPuente(puente)# "P 3,1 3,5"
+    aux=puente.split(/\s/) # ["P","3,1","3,5"]
+    aux[1]=stringPuente(aux[1]) # "3,1"
+    aux[2]=stringPuente(aux[2]) # "3,5"
+    return aux # [P,[3,1],[3,5]]
+end

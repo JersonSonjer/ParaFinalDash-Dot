@@ -4,6 +4,7 @@ require './lib/Mover.rb'
 require './lib/ConvertString.rb'
 require './lib/Limites.rb'
 require './lib/Mover_Auto.rb'
+require './lib/Puente.rb'
 RSpec.describe "juego de Dash & Dot"do
 
 obstaculos=[]
@@ -146,5 +147,30 @@ obstaculos=[]
     end
     it "Deberia devolver ubicacion final sin ingresar obstaculos" do
         expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAAIA")).to eq(["5,5","2,2 N","IAIAIADA","4,2 S","2,3 N","IAAIAAIA","4,1 E"])
+    end
+    #puentes
+    it "Deberia verificar si esta en la subida del puente" do
+        expect(verificarPuente([2,2,"N"],[3,1])).to eq(false)
+    end
+    it "Deberia verificar si esta en la subida del puente" do
+        expect(verificarPuente([3,1,"N"],[3,1])).to eq(true)
+    end
+    it "Deberia cambiar la ubicacion del auto" do
+        expect(bajarPuente([2,2,"N"],[3,5])).to eq([3,5,"N"])
+    end
+    it "Deberia cambiar la ubicacion del auto" do
+        expect(bajarPuente([2,2,"N"],[3,1])).to eq([3,1,"N"])
+    end
+    it "Deberia mover el auto al final del puente" do
+        expect(subirPuente([3,1,"N"],["P",[3,1],[3,5]])).to eq([3,5,"N"])
+    end
+    it "Deberia mover el auto al final del puente" do
+        expect(subirPuente([3,5,"N"],["P",[3,1],[3,5]])).to eq([3,1,"N"])
+    end
+    it "Deberia convertir el string de puente" do
+        expect(stringPuente("3,1")).to eq([3,1])
+    end
+    it "Deberia convertir el string de puente completo" do
+        expect(convertPuente("P 3,1 3,5")).to eq(["P",[3,1],[3,5]])
     end
 end    
