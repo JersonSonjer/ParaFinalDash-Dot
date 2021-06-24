@@ -173,4 +173,14 @@ obstaculos=[]
     it "Deberia convertir el string de puente completo" do
         expect(convertPuente("P 3,1 3,5")).to eq(["P",[3,1],[3,5]])
     end
+    #mover auto con puentes
+    it "Deberia devolver ubicacion final con 1 puente y obstaculos" do
+        expect(mover_auto3([5,5],[2,3,"N"],"AAAAD",[["O",3,2],["O",1,2],["O",3,3]],[["P",[3,1],[1,3]]])).to eq([0,1,"E"])
+    end
+    it "Deberia devolver ubicacion final con 1 puente sin obstaculos" do
+        expect(mover_auto3([5,5],[2,3,"N"],"AAAAD",[],[["P",[3,1],[1,3]]])).to eq([0,1,"E"])
+    end
+    it "Deberia devolver ubicacion final con 1 puente sin obstaculos" do
+        expect(mover_auto3([5,5],[2,0,"N"],"AAA",[],[["P",[0,0],[3,3]]])).to eq([2,3,"N"])
+    end
 end    
