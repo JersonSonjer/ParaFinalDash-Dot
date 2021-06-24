@@ -21,7 +21,7 @@ def verificarCoordenada2(coord, limite)#=>2 , 5
     return coord
 end
 
-def verificarLimites(ubicacion, tamano)
+def verificarLimites(ubicacion, tamano)#2,2 "O" , 5,5
     if (verificarCoordenada(ubicacion[0], tamano[0]))#=>True
         if (verificarCoordenada(ubicacion[1], tamano[1]))#=>True
             return true

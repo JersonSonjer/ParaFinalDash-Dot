@@ -23,7 +23,7 @@ def mover_auto3(tamano, ubicacion, cad_comandos, obstaculos, puentes)
     return ubicacion #[2,2,S]
 end
 
-def mover_auto2(tamano, ubicacion, cad_comandos, obstaculos)#[5,5],[2,2,"N"],"IAAA",[["O",3,2],["O",1,2],["O",2,0]]
+def mover_auto2(tamano, ubicacion, cad_comandos, obstaculos)#([ 5,5, "2,3 N","IAA",[["O",3,2],["O",1,2],["O",3,3],[2,1,"O"]])
     
     com=cad_comandos.chars
     com.each do |elem|
@@ -33,11 +33,11 @@ def mover_auto2(tamano, ubicacion, cad_comandos, obstaculos)#[5,5],[2,2,"N"],"IA
         if (elem == 'A')
             ubicacion=avanzar(ubicacion,tamano)#=>[2,1,"O"],[5,5] =>[2,0 "O"]
             if (obstaculos != [])
-                sobreObstaculos(ubicacion, obstaculos)#=>[2,1 "O"]
+                sobreObstaculos(ubicacion, obstaculos)#=>[2,1,"O"]
             end
             
         end
-        ubicacion=verificarLimites2(ubicacion, tamano)# [2,1 "O"], [5,5] =>[2,1,"O"]
+        ubicacion=verificarLimites2(ubicacion, tamano)# [2,1,"O"], [5,5] =>[2,1,"O"]
     end
     return ubicacion #[0,3 "E"]
 end

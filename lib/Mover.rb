@@ -1,5 +1,5 @@
 
-def avanzar(ubicacion, tamano)#=>[2,1,"O"],[5,5]
+def avanzar(ubicacion, tamano)#=>[2,2,"O"],[5,5]=> [2,1, "O"]
     
     if (ubicacion[2] == 'N' || ubicacion[2] == 'S')
         ubicacion[0]=avanzar_norte_sur(ubicacion[0], ubicacion[2])#=>

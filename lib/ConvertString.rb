@@ -1,9 +1,9 @@
 #formato del magister
-def ubicacion2(cadena)#"2,2 N"
+def ubicacion2(cadena)#["2,2 N"]
     cad=cadena.split(/\s|,/)#divide la cad cuando encuentra un spacio(\s)o(,)=>["2","2","N"]
     cad[0]=cad[0].to_i
     cad[1]=cad[1].to_i
-    return cad #[2,2,"S"]
+    return cad #[2,2,"N"]
 end
 
 def dividir_cadena2(cadena)#5,5\n2,2 N\nIAIAIADA
@@ -11,11 +11,11 @@ def dividir_cadena2(cadena)#5,5\n2,2 N\nIAIAIADA
     return cad# =>["5,5" , "2,2 N", "IAIAIADA"]
 end
 
-def tamano(cadena)
+def tamano(cadena)# ["5,5"]
     cad=cadena.split(/,/)
-    cad[0]=cad[0].to_i
-    cad[1]=cad[1].to_i
-    return cad
+    cad[0]=cad[0].to_i#5
+    cad[1]=cad[1].to_i#5
+    return cad#[5,5]
 end
 
 #OBSTACULOS 
@@ -34,7 +34,7 @@ def convertObstaculos(obstaculos) # ["O 3,2", ....]
     return aux #[["O",3,2],......]
 end
 
-def filtrarObstaculos(cad)
+def filtrarObstaculos(cad)#["5,5" ,"2,2 N" , "IAIAIADA" , "2,3 N","IAA", "O 3,2","O 1,2","O 3,3"]
     aux=[]
     cad.each do |elemento|
         if (elemento[0] == "O")
@@ -47,11 +47,11 @@ end
 
 # ubicacion a string
 
-def ubicString(ubicFinal)
+def ubicString(ubicFinal)#[2,1,"O"]
     ubicFinal[0]=ubicFinal[0].to_s
     ubicFinal[1]=ubicFinal[1].to_s
     resp=ubicFinal[0]+','+ubicFinal[1]+' '+ubicFinal[2]
-    return resp
+    return resp#["2","1","O"]
 end
 
 #respuesta en string
