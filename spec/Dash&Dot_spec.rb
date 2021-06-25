@@ -5,6 +5,8 @@ require './lib/ConvertString.rb'
 require './lib/Limites.rb'
 require './lib/Mover_Auto.rb'
 require './lib/Puente.rb'
+require './lib/Obstaculos.rb'
+
 RSpec.describe "juego de Dash & Dot"do
 
 obstaculos=[]

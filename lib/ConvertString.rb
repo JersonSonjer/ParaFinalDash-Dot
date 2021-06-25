@@ -12,7 +12,7 @@ def ubicacion2(cadena)#["2,2 N"]
 end
 
 def dividir_cadena2(cadena)#5,5\n2,2 N\nIAIAIADA
-    cad=cadena.split(/\n/)#divide una cadena cuando encuentra un \n
+    cad=cadena.split(/\n|-/)#divide una cadena cuando encuentra un \n
     return cad# =>["5,5" , "2,2 N", "IAIAIADA"]
 end
 

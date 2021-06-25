@@ -1,5 +1,13 @@
 require './lib/ConvertString.rb'
 require './lib/Mover_Auto.rb'
+require './lib/Direccion.rb'
+require './lib/Limites.rb'
+require './lib/Mover.rb'
+require './lib/Obstaculos.rb'
+require './lib/Puente.rb'
+
+
+
 def Dash_Dot3(cad) #"5,5\n2,0 N\nAAA\n0,3 E\nAAA\nP 0,0 3,3\nP 0,4 4,0"
     cadenas=dividir_cadena2(cad)#["5,5" ,"2,0 N","AAA","0,3 E","AAA","P 0,0 3,3","P 0,4 4,0"]
     obstaculos=filtrarObstaculos(cadenas)
