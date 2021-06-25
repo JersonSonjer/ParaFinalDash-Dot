@@ -1,5 +1,6 @@
 require './lib/Obstaculos.rb'
 require './lib/Limites.rb'
+require './lib/Mover.rb'
 def mover_auto3(tamano, ubicacion, cad_comandos, obstaculos, puentes)
     com=cad_comandos.chars#[5,5],[2,3,"N"],"AAAAD",[["O",3,2],["O",1,2],["O",3,3]],[["P",[3,1],[1,3]]]
     com.each do |elem|

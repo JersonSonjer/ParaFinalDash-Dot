@@ -200,4 +200,14 @@ obstaculos=[]
     it "Deberia devolver ubicacion final sin ingresar obstaculos" do
         expect(Dash_Dot2("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAAIA")).to eq(["5,5","2,2 N","IAIAIADA","4,2 S","2,3 N","IAAIAAIA","4,1 E"])
     end
+    #Principal incluyendo puentes como tambien no
+    it "Deberia devolver ubicacion final sin ingresar puentes" do
+        expect(Dash_Dot3("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAAIA")).to eq(["5,5","2,2 N","IAIAIADA","4,2 S","2,3 N","IAAIAAIA","4,1 E"])
+    end
+    it "Deberia devolver ubicacion final CON 2 puentes" do
+        expect(Dash_Dot3("5,5\n2,0 N\nAAA\n0,3 E\nAAA\nP 0,0 3,3\nP 0,4 4,0")).to eq(["5,5","2,0 N","AAA","2,3 N","0,3 E","AAA","4,2 E"])
+    end
+    it "Deberia devolver ubicacion final chocando autos sin obstaculos ni puentes" do
+        expect(Dash_Dot3("5,5\n2,2 N\nIAIAIADA\n2,3 N\nIAAIAA")).to eq(["5,5","2,2 N","IAIAIADA","4,2 S","2,3 N","IAAIAA","4,1 S"])
+    end
 end    

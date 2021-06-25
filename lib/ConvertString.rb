@@ -1,3 +1,8 @@
+
+def dividir_cadena(cadena)
+    cad=cadena.split('-')
+    return cad
+end
 #formato del magister
 def ubicacion2(cadena)#["2,2 N"]
     cad=cadena.split(/\s|,/)#divide la cad cuando encuentra un spacio(\s)o(,)=>["2","2","N"]
@@ -79,4 +84,14 @@ def convertPuente(puente)# "P 3,1 3,5"
     aux[1]=stringPuente(aux[1]) # "3,1"
     aux[2]=stringPuente(aux[2]) # "3,5"
     return aux # [P,[3,1],[3,5]]
+end
+
+def filtrarPuentes(cad)#["5,5" ,"2,0 N","AAA","0,3 E","AAA","P 0,0 3,3","P 0,4 4,0"]
+    aux=[]
+    cad.each do |elemento|
+        if (elemento[0] == "P")
+            aux.push(convertPuente(elemento))#[P,[0,0],[3,3]]
+        end
+    end
+    return aux #[P,[0,0],[3,3], P,[0,4],[4,0]]
 end
